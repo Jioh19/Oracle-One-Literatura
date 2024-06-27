@@ -1,6 +1,7 @@
 package com.alura.literatura.controller;
 
 import com.alura.literatura.model.DatosLibro;
+import com.alura.literatura.service.AutorService;
 import com.alura.literatura.service.LibroService;
 
 import java.util.Optional;
@@ -13,6 +14,8 @@ public class Principal {
 
     @Autowired
     LibroService libroService;
+    @Autowired
+    AutorService autorService;
 
     public void muestraApi() {
 
@@ -37,7 +40,15 @@ public class Principal {
                         libroService.buscarLibro(sc);
                         break;
                     case 2:
-                        System.out.println("Entre a la opcion 2");
+                        libroService.listarLibros();
+                        break;
+                    case 3:
+                        autorService.listarAutores();
+                        break;
+                    case 4:
+                        System.out.println("Ingrese año");
+                        int anio = sc.nextInt();
+                        autorService.autorVivo(anio);
                         break;
                     case 0:
                         continuar = false;

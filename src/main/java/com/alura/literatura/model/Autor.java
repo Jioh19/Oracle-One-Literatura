@@ -45,4 +45,11 @@ public class Autor {
     public void setLibros(List<Libro> libros) {
         this.libros = libros;
     }
+
+    @Override
+    public String toString() {
+        return "\nname='" + name + '\'' +
+                ", birth_year=" + birth_year +
+                ", death_year=" + death_year;
+    }
 }

@@ -39,10 +39,10 @@ public class LibroService {
         DatosLibro datosLibro = datosLibros.getFirst();
         System.out.println(datosLibro);
         if (repository.existsById(datosLibro.id())) {
-            System.out.println("Libro ya ingresado: " + datosLibro.title());
+            //System.out.println("Libro ya ingresado: " + datosLibro.title());
             return;
         }
-        System.out.println("Ingresando libro: " + datosLibro.title());
+        //System.out.println("Ingresando libro: " + datosLibro.title());
         Libro libro = new Libro();
         libro.setTitle(datosLibro.title());
         libro.setDownload_count(datosLibro.download_count());
@@ -54,7 +54,12 @@ public class LibroService {
             autores.add(autor);
         }
         libro.setAutores(autores);
-        System.out.println("El libro ingresado es: " +libro);
+        //System.out.println("El libro ingresado es: " +libro);
 
+    }
+
+    public void listarLibros() {
+        List<Libro> libros = repository.findAll();
+        System.out.println(libros);
     }
 }

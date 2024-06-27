@@ -42,4 +42,13 @@ public class AutorService {
         repository.save(autor);
         return autor;
     }
+
+    public void listarAutores() {
+        List<Autor> autores = repository.findAll();
+        System.out.println(autores);
+    }
+
+    public void autorVivo(int anio) {
+        System.out.println(repository.yearAutor(anio));
+    }
 }
