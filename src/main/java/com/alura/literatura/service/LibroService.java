@@ -47,6 +47,7 @@ public class LibroService {
         libro.setTitle(datosLibro.title());
         libro.setDownload_count(datosLibro.download_count());
         libro.setId(datosLibro.id());
+        libro.setLanguages(datosLibro.languages().getFirst());
         repository.save(libro);
         List<Autor> autores = new ArrayList<>();
         for (DatosAutor datosAutor : datosLibro.authors()) {
@@ -61,5 +62,9 @@ public class LibroService {
     public void listarLibros() {
         List<Libro> libros = repository.findAll();
         System.out.println(libros);
+    }
+
+    public void buscarLibrosLenguaje(String lenguaje) {
+        System.out.println(repository.findByLanguages(lenguaje));
     }
 }

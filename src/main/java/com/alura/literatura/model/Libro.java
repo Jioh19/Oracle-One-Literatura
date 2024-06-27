@@ -20,6 +20,7 @@ public class Libro {
     private int id;
     private String title;
     private int download_count;
+    private String languages;
     @ManyToMany(mappedBy = "libros", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Autor> autores;
 
@@ -29,6 +30,7 @@ public class Libro {
         return "\n" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", languages=" + languages +
                 ", download_count=" + download_count +
                 ", autores=" + autores;
     }

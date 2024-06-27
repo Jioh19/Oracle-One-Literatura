@@ -50,6 +50,11 @@ public class Principal {
                         int anio = sc.nextInt();
                         autorService.autorVivo(anio);
                         break;
+                    case 5:
+                        System.out.println("Ingrese lenguaje");
+                        String lenguaje = sc.next();
+                        libroService.buscarLibrosLenguaje(lenguaje);
+                        break;
                     case 0:
                         continuar = false;
                         break;
